@@ -1,0 +1,28 @@
+name: Run action
+
+on:
+  push:
+    paths-ignore:
+      - README.md
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Checkout buildpacks/samples
+      uses: actions/checkout@v2
+      with:
+        repository: buildpacks/samples
+        path: samples
+
+    - name: Build image
+      uses: ./
+      with:
+        image: 'sample-bash-app'
+        path: 'samples/apps/bash-script/'
+        builder: 'cnbs/sample-builder:bionic'
+
+    - name: Check the built image
+      run: docker image ls | grep sample-bash-app

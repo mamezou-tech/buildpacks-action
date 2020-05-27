@@ -1,0 +1,24 @@
+name: buildpacks-action
+description: 'Execute buildpacks CLI in GitHub Actions'
+author: 'mamezou-tech'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'purple'
+inputs:
+  image:
+    description: 'Name of container image'
+    required: true
+  tag:
+    description: 'Tag of container image'
+    default: 'latest'
+    required: false
+  path:
+    description: 'Path to target application'
+    required: true
+  builder:
+    description: 'Builder to use'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
