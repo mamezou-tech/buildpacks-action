@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout sample
+    - name: Checkout buildpacks/samples
       uses: actions/checkout@v2
       with:
         repository: buildpacks/samples
         path: samples
-    - run: ls -l samples
     - name: Run pack
       uses: ./
       with:
         args: 'build sample-bash-app:latest --path samples/apps/bash-script/ --builder cnbs/sample-builder:bionic'
-    - run: docker image ls
+    - name: Check the built image
+      run: docker image ls | grep sample-bash-app
