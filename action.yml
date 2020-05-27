@@ -7,16 +7,17 @@ branding:
 inputs:
   image:
     description: 'Name of container image'
-    required: false
+    required: true
   tag:
     description: 'Tag of container image'
+    default: 'latest'
     required: false
   path:
     description: 'Path to target application'
-    required: false
+    required: true
   builder:
-    description:  'Builder to use'
-    required: false
+    description: 'Builder to use'
+    required: true
 
 runs:
   using: 'docker'
