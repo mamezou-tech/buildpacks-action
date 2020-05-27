@@ -19,4 +19,5 @@ jobs:
     - name: Run pack
       uses: ./
       with:
-        args: '--version'
+        args: 'build sample-bash-app:latest --path samples/apps/bash-script/ --builder cnbs/sample-builder:bionic'
+    - run: docker image ls
