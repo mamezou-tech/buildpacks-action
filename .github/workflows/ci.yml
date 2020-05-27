@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Checkout sample
+      uses: actions/checkout@v2
+      with:
+        repository: buildpacks/samples
+        path: samples
+    - run: ls -l samples
     - name: Run pack
       uses: ./
       with:
