@@ -1,0 +1,16 @@
+name: Run action
+
+on:
+  push:
+    paths-ignore:
+      - README.md
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run pack
+      uses: ./
+      with:
+        args: '--version'
