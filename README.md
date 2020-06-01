@@ -12,7 +12,7 @@ on: [push]
     - uses: actions/checkout@v2
 
     - name: Build image
-      uses: mamezou-tech/buildpack-action@master
+      uses: mamezou-tech/buildpacks-action@master
       with:
         image: 'foo-app'
         tag: '1.0.0'
