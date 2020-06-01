@@ -27,4 +27,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    version: ${{ inputs.version }}
+    VERSION: ${{ inputs.version }}

@@ -1,10 +1,8 @@
 FROM docker:19.03-dind
 
-ARG version=v0.10.0
-
 RUN apk add --update --no-cache curl && \
-    curl -LO https://github.com/buildpacks/pack/releases/download/${version}/pack-${version}-linux.tgz && \
-    tar xfz pack-${version}-linux.tgz && \
+    curl -LO https://github.com/buildpacks/pack/releases/download/${VERSION}/pack-${VERSION}-linux.tgz && \
+    tar xfz pack-${VERSION}-linux.tgz && \
     mv pack /usr/bin/
 
 RUN mkdir /work
