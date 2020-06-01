@@ -18,7 +18,13 @@ inputs:
   builder:
     description: 'Builder to use'
     required: true
+  version:
+    description: 'Version of pack CLI'
+    required: false
+    default: 'v0.11.0'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    version: ${{ inputs.version }}
