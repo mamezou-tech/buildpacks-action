@@ -2,7 +2,7 @@ name: buildpacks-action
 description: 'Execute buildpacks CLI in GitHub Actions'
 author: 'mamezou-tech'
 branding:
-  icon: 'arrow-right-circle'
+  icon: 'chevron-right'
   color: 'purple'
 inputs:
   image:
