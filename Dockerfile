@@ -1,6 +1,6 @@
 FROM docker:19.03-dind
 
-RUN echo ${VERSION}
+ARG VERSION=v0.10.0
 
 RUN apk add --update --no-cache curl && \
     curl -LO https://github.com/buildpacks/pack/releases/download/${VERSION}/pack-${VERSION}-linux.tgz && \
