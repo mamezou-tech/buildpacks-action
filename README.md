@@ -22,6 +22,8 @@ on: [push]
     - name: Push image
 ```
 
+> buildpacks v0.11.0 will be run.
+
 ## Inputs
 - `image` : (required) Name of container image.
 - `tag` : (optional) Tag of container image. Default `latest`
