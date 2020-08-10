@@ -12,7 +12,7 @@ if [ -n "$INPUT_ENV" ]; then
   done
 fi
 
-command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} --path ${INPUT_PATH} --builder ${INPUT_BUILDER}"
+command="pack build ${INPUT_IMAGE}:${INPUT_TAG} --path ${INPUT_PATH} --builder ${INPUT_BUILDER}"
 echo $command
 
 echo "::set-output name=command::$command"
