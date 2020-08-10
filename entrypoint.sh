@@ -4,7 +4,7 @@ set -e
 
 env_str=""
 if [ -n "$INPUT_ENV" ]; then
-  read -r -a arr <<< "$INPUT_ENV"
+  arr=(${INPUT_ENV})
 
   for e in "${arr[@]}"
   do
