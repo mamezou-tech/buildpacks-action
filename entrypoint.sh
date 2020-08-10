@@ -12,6 +12,7 @@ if [ -n "$INPUT_ENV" ]; then
     env_str+='"'$e'"'
   done
 fi
-echo ${env_str}
+command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} --path ${INPUT_PATH} --builder ${INPUT_BUILDER}"
+echo "::set-output name=command::${command}"
 
-sh -c "pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} --path ${INPUT_PATH} --builder ${INPUT_BUILDER}"
+sh -c "${command}"
