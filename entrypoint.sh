@@ -8,8 +8,7 @@ if [ -n "$INPUT_ENV" ]; then
 
   for e in "${arr[@]}"
   do
-    env_str+=" --env "
-    env_str+='''$e'''
+    env_str+=" --env $e"
   done
 fi
 
