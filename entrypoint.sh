@@ -17,4 +17,4 @@ echo $command
 
 echo "::set-output name=command::$command"
 
-sh -c '"'$command'"'
+sh -c "pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} --path ${INPUT_PATH} --builder ${INPUT_BUILDER}"
