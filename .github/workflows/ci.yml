@@ -23,6 +23,7 @@ jobs:
         image: 'sample-bash-app'
         path: 'samples/apps/bash-script/'
         builder: 'cnbs/sample-builder:bionic'
+        env: 'HELLO=WORLD FOO=BAR BAZ'
       id: build
     
     - name: Show build command
