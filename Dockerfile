@@ -1,8 +1,8 @@
 FROM docker:19.03-dind
 
-ENV VERSION=v0.11.0
+ENV VERSION=v0.12.0
 
-RUN apk add --update --no-cache curl && \
+RUN apk add --update --no-cache curl bash && \
     curl -LO https://github.com/buildpacks/pack/releases/download/${VERSION}/pack-${VERSION}-linux.tgz && \
     tar xfz pack-${VERSION}-linux.tgz && \
     mv pack /usr/bin/
