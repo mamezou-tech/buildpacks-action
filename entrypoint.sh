@@ -9,7 +9,7 @@ if [ -n "$INPUT_ENV" ]; then
   for e in "${arr[@]}"
   do
     env_str+=" --env "
-    env_str*='"'$e'"'
+    env_str*='''$e'''
   done
 fi
 echo ${env_str}
