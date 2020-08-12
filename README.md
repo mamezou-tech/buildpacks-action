@@ -18,14 +18,18 @@ on: [push]
         tag: '1.0.0'
         path: 'path/to/foo-app/'
         builder: 'gcr.io/paketo-buildpacks/builder:base'
+        env: 'HELLO=WORLD FOO=BAR BAZ'
 
     - name: Push image
 ```
 
-> buildpacks v0.11.0 will be run.
+> buildpacks v0.12.0 will be executed.
 
 ## Inputs
 - `image` : (required) Name of container image.
 - `tag` : (optional) Tag of container image. Default `latest`
 - `path` : (required) Path to target application.
 - `builder` : (required) Builder to use.
+- `env` : (optional) Environment variables, space separated.
+
+> See "[Cloud Native Buildpack Documentation · Environment variables](https://buildpacks.io/docs/app-developer-guide/environment-variables/)" for environment valiables.

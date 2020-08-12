@@ -4,6 +4,10 @@ on:
   push:
     paths-ignore:
       - README.md
+  pull_request:
+    paths-ignore:
+      - README.md
+  
 
 jobs:
   test:
@@ -23,6 +27,11 @@ jobs:
         image: 'sample-bash-app'
         path: 'samples/apps/bash-script/'
         builder: 'cnbs/sample-builder:bionic'
+        env: 'HELLO=WORLD FOO=BAR BAZ'
+      id: build
+    
+    - name: Show build command
+      run: echo ${{ steps.build.outputs.command }}
 
     - name: Check the built image
       run: docker image ls | grep sample-bash-app

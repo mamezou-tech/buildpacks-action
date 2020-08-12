@@ -18,6 +18,12 @@ inputs:
   builder:
     description: 'Builder to use'
     required: true
+  env:
+    description: 'Build-time environment variables'
+    required: false
+outputs:
+  command:
+    description: 'build command executed'
 
 runs:
   using: 'docker'
