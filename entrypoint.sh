@@ -13,7 +13,7 @@ if [ -n "$INPUT_ENV" ]; then
 fi
 
 buildpacks=""
-if [ -n "$INPUT_BUILDPACKS"]; then
+if [ -n "$INPUT_BUILDPACKS" ]; then
   arr=(${INPUT_BUILDPACKS})
   for p in "${arr[@]}"
   do
