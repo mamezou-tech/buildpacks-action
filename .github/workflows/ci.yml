@@ -27,7 +27,7 @@ jobs:
         path: 'samples/apps/bash-script/'
         builder: 'cnbs/sample-builder:bionic'
         env: 'HELLO=WORLD FOO=BAR BAZ'
-      id: build-bash-app
+      id: build
     
     - name: Show build command
       run: echo ${{ steps.build.outputs.command }}
