@@ -18,6 +18,9 @@ inputs:
   builder:
     description: 'Builder to use'
     required: true
+  buildpacks:
+    description: 'Custom buildpacks to use'
+    required: false
   env:
     description: 'Build-time environment variables'
     required: false
