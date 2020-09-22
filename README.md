@@ -23,13 +23,33 @@ on: [push]
     - name: Push image
 ```
 
-> buildpacks v0.12.0 will be executed.
+> buildpacks v0.13.1 will be executed.
 
 ## Inputs
 - `image` : (required) Name of container image.
 - `tag` : (optional) Tag of container image. Default `latest`
 - `path` : (required) Path to target application.
 - `builder` : (required) Builder to use.
+- `buildpacks` : (optional) URLs or Paths to Custom buildpacks, space separated.
 - `env` : (optional) Environment variables, space separated.
 
 > See "[Cloud Native Buildpack Documentation · Environment variables](https://buildpacks.io/docs/app-developer-guide/environment-variables/)" for environment valiables.
+
+
+Example of building with buildpack
+
+```yaml
+on: [push]
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build image
+      uses: mamezou-tech/buildpacks-action@master
+      with:
+        image: 'sample-java-maven-app'
+        path: 'samples/apps/java-maven/'
+        builder: 'cnbs/sample-builder:alpine'
+        buildpacks: 'samples/buildpacks/java-maven samples/buildpacks/hello-processes/ cnbs/sample-package:hello-universe'
+```
