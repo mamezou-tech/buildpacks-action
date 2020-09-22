@@ -7,10 +7,9 @@ on:
   pull_request:
     paths-ignore:
       - README.md
-  
 
 jobs:
-  test:
+  build-bash-app:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -28,10 +27,36 @@ jobs:
         path: 'samples/apps/bash-script/'
         builder: 'cnbs/sample-builder:bionic'
         env: 'HELLO=WORLD FOO=BAR BAZ'
-      id: build
+      id: build-bash-app
     
     - name: Show build command
       run: echo ${{ steps.build.outputs.command }}
 
     - name: Check the built image
       run: docker image ls | grep sample-bash-app
+
+  build-maven-app:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Checkout buildpacks/samples
+      uses: actions/checkout@v2
+      with:
+        repository: buildpacks/samples
+        path: samples
+
+    - name: Build image
+      uses: ./
+      with:
+        image: 'sample-java-maven-app'
+        path: 'samples/apps/java-maven/'
+        builder: 'cnbs/sample-builder:alpine'
+        buildpacks: 'samples/buildpacks/java-maven samples/buildpacks/hello-processes/ cnbs/sample-package:hello-universe'
+      id: build
+
+    - name: Show build command
+      run: echo ${{ steps.build.outputs.command }}
+
+    - name: Check the built image
+      run: docker image ls | grep sample-java-maven-app
