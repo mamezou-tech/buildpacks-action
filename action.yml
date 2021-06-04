@@ -24,6 +24,9 @@ inputs:
   env:
     description: 'Build-time environment variables'
     required: false
+  env-files:
+    description: 'Read build-time environment variables from these files'
+    required: false
 outputs:
   command:
     description: 'build command executed'

@@ -32,6 +32,7 @@ on: [push]
 - `builder` : (required) Builder to use.
 - `buildpacks` : (optional) URLs or Paths to Custom buildpacks, space separated.
 - `env` : (optional) Environment variables, space separated.
+- `env-file` : (optional) Files containing build time environment variables, space separated.
 
 > See "[Cloud Native Buildpack Documentation · Environment variables](https://buildpacks.io/docs/app-developer-guide/environment-variables/)" for environment valiables.
 
