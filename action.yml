@@ -13,7 +13,7 @@ inputs:
     default: 'latest'
     required: false
   path:
-    description: 'Path to target application'
+    description: 'Path to target application, defaults to the current directory'
     default: '.'
     required: false
   builder:
