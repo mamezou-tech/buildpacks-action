@@ -24,7 +24,7 @@ inputs:
   env:
     description: 'Build-time environment variables'
     required: false
-  env-files:
+  env_files:
     description: 'Read build-time environment variables from these files'
     required: false
 outputs:

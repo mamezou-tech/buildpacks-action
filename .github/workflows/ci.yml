@@ -27,7 +27,7 @@ jobs:
         path: 'samples/apps/bash-script/'
         builder: 'cnbs/sample-builder:bionic'
         env: 'HELLO=WORLD FOO=BAR BAZ'
-        env-files: '.env.ci'
+        env_files: '.env.ci'
       id: build
 
     - name: Show build command
