@@ -14,7 +14,8 @@ inputs:
     required: false
   path:
     description: 'Path to target application'
-    required: true
+    default: '.'
+    required: false
   builder:
     description: 'Builder to use'
     required: true
