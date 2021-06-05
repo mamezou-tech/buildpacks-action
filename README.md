@@ -28,10 +28,11 @@ on: [push]
 ## Inputs
 - `image` : (required) Name of container image.
 - `tag` : (optional) Tag of container image. Default `latest`
-- `path` : (required) Path to target application.
+- `path` : (optional) Path to target application, defaults to the current directory.
 - `builder` : (required) Builder to use.
 - `buildpacks` : (optional) URLs or Paths to Custom buildpacks, space separated.
 - `env` : (optional) Environment variables, space separated.
+- `env_files` : (optional) Files containing build time environment variables, space separated.
 
 > See "[Cloud Native Buildpack Documentation · Environment variables](https://buildpacks.io/docs/app-developer-guide/environment-variables/)" for environment valiables.
 

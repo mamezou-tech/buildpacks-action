@@ -13,8 +13,9 @@ inputs:
     default: 'latest'
     required: false
   path:
-    description: 'Path to target application'
-    required: true
+    description: 'Path to target application, defaults to the current directory'
+    default: '.'
+    required: false
   builder:
     description: 'Builder to use'
     required: true
@@ -23,6 +24,9 @@ inputs:
     required: false
   env:
     description: 'Build-time environment variables'
+    required: false
+  env_files:
+    description: 'Read build-time environment variables from these files'
     required: false
 outputs:
   command:

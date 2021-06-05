@@ -12,6 +12,16 @@ if [ -n "$INPUT_ENV" ]; then
   done
 fi
 
+env_files_str=""
+if [ -n "$INPUT_ENV_FILES" ]; then
+  arr=(${INPUT_ENV_FILES})
+  for e in "${arr[@]}"
+  do
+    env_files_str+=" --env-file "
+    env_files_str+='"'$e'"'
+  done
+fi
+
 buildpacks=""
 if [ -n "$INPUT_BUILDPACKS" ]; then
   arr=(${INPUT_BUILDPACKS})
@@ -22,7 +32,7 @@ if [ -n "$INPUT_BUILDPACKS" ]; then
   done
 fi
 
-command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER}"
+command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} ${env_files_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER}"
 echo "::set-output name=command::${command}"
 
 sh -c "${command}"
