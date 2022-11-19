@@ -33,6 +33,6 @@ if [ -n "$INPUT_BUILDPACKS" ]; then
 fi
 
 command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} ${env_files_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER}"
-echo "::set-output name=command::${command}"
+echo "command=${command}" >> $GITHUB_OUTPUT
 
 sh -c "${command}"
