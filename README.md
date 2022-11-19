@@ -9,7 +9,7 @@ on: [push]
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Build image
       uses: mamezou-tech/buildpacks-action@master
@@ -44,7 +44,7 @@ on: [push]
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Build image
       uses: mamezou-tech/buildpacks-action@master
