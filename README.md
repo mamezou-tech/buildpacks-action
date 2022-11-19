@@ -9,7 +9,7 @@ on: [push]
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Build image
       uses: mamezou-tech/buildpacks-action@master
@@ -23,7 +23,7 @@ on: [push]
     - name: Push image
 ```
 
-> buildpacks v0.22.0 will be executed.
+> buildpacks v0.27.0 will be executed.
 
 ## Inputs
 - `image` : (required) Name of container image.
@@ -44,7 +44,7 @@ on: [push]
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Build image
       uses: mamezou-tech/buildpacks-action@master
