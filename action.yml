@@ -28,6 +28,13 @@ inputs:
   env_files:
     description: 'Read build-time environment variables from these files'
     required: false
+  publish:
+    description: 'Publish the resulting image to the registry'
+    required: false
+  debug_mode:
+    description: "Run in debug mode - only output command is set. Don't run the pack command"
+    required: false
+
 outputs:
   command:
     description: 'build command executed'
