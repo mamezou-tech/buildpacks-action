@@ -23,7 +23,7 @@ on: [push]
     - name: Push image
 ```
 
-> buildpacks v0.27.0 will be executed.
+> buildpacks/pack v0.29.0 will be executed.
 
 ## Inputs
 - `image` : (required) Name of container image.
