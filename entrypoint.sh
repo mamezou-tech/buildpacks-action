@@ -32,7 +32,17 @@ if [ -n "$INPUT_BUILDPACKS" ]; then
   done
 fi
 
-command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} ${env_files_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER}"
+publish=""
+if [ -n "$INPUT_PUBLISH" ]; then
+  publish="--publish"
+fi
+
+command="pack build ${INPUT_IMAGE}:${INPUT_TAG} ${env_str} ${env_files_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER} ${publish}"
 echo "command=${command}" >> $GITHUB_OUTPUT
 
-sh -c "${command}"
+if [ "$INPUT_DEBUG_MODE" = "true" ]; then
+  echo "Running in debug mode"
+  echo "command = ${command}"
+else
+  sh -c "${command}"
+fi

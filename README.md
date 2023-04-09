@@ -33,6 +33,8 @@ on: [push]
 - `buildpacks` : (optional) URLs or Paths to Custom buildpacks, space separated.
 - `env` : (optional) Environment variables, space separated.
 - `env_files` : (optional) Files containing build time environment variables, space separated.
+- `publish` : (optional) Publish the built image (requires docker to be logged in)
+- `debug_mode` : (optional) Only print the command to be run. Will not build container image
 
 > See "[Cloud Native Buildpack Documentation · Environment variables](https://buildpacks.io/docs/app-developer-guide/environment-variables/)" for environment valiables.
 
@@ -53,4 +55,5 @@ on: [push]
         path: 'samples/apps/java-maven/'
         builder: 'cnbs/sample-builder:alpine'
         buildpacks: 'samples/buildpacks/java-maven samples/buildpacks/hello-processes/ cnbs/sample-package:hello-universe'
+        publish: true
 ```

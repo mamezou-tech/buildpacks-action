@@ -25,7 +25,7 @@ jobs:
       with:
         image: 'sample-bash-app'
         path: 'samples/apps/bash-script/'
-        builder: 'cnbs/sample-builder:bionic'
+        builder: 'cnbs/sample-builder:alpine'
         env: 'HELLO=WORLD FOO=BAR BAZ'
         env_files: '.env.ci'
       id: build
@@ -35,6 +35,21 @@ jobs:
 
     - name: Check the built image
       run: docker image ls | grep sample-bash-app
+
+    - name: Check publishing
+      uses: ./
+      with:
+        image: 'sample-bash-app'
+        path: 'samples/apps/bash-script/'
+        builder: 'cnbs/sample-builder:alpine'
+        env: 'HELLO=WORLD FOO=BAR BAZ'
+        env_files: '.env.ci'
+        debug_mode: "true"
+        publish: true
+      id: publish
+
+    - name: Check publish argument was present
+      run: echo ${{ steps.publish.outputs.command }} | grep publish
 
   build-maven-app:
     runs-on: ubuntu-latest
