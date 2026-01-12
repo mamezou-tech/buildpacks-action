@@ -1,6 +1,6 @@
-FROM docker:20.10.21-dind
+FROM docker:29.1.4-dind
 
-ENV VERSION=v0.29.0
+ENV VERSION=v0.39.1
 
 RUN apk add --update --no-cache curl bash && \
     curl -LO https://github.com/buildpacks/pack/releases/download/${VERSION}/pack-${VERSION}-linux.tgz && \

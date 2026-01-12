@@ -12,10 +12,10 @@ jobs:
   build-bash-app:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Checkout buildpacks/samples
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         repository: buildpacks/samples
         path: samples
@@ -54,10 +54,10 @@ jobs:
   build-maven-app:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Checkout buildpacks/samples
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         repository: buildpacks/samples
         path: samples

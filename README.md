@@ -9,10 +9,10 @@ on: [push]
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Build image
-      uses: mamezou-tech/buildpacks-action@master
+      uses: mamezou-tech/buildpacks-action@0.8.0
       with:
         image: 'foo-app'
         tag: '1.0.0'
@@ -46,10 +46,10 @@ on: [push]
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Build image
-      uses: mamezou-tech/buildpacks-action@master
+      uses: mamezou-tech/buildpacks-action@0.8.0
       with:
         image: 'sample-java-maven-app'
         path: 'samples/apps/java-maven/'
